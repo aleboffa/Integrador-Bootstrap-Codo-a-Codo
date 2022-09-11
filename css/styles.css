@@ -4,6 +4,23 @@
   position: relative;
 }
 
+.banner-medio {
+  position: relative;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.flex-container > div {
+
+  width: 700px;
+  margin: 10px;
+
+}
+
 .banner::before {
   content: "";
   position: absolute;
@@ -14,8 +31,21 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.banner-info {
+.banner-texto {
   position: relative;
+}
+
+.oradores {
+  position: relative;
+
+  margin: 30px;
+  margin-left: 70px;
+  margin-right: 70px
+}
+
+.formulario {
+  position: relative;
+  padding: auto;
 }
 
 footer {
