@@ -59,3 +59,8 @@ footer {
 body {
   margin-bottom: 300px;
 }
+
+.botonVerdeClaro {
+  background-color: #90c43c;
+  border-color: #90c43c;
+}
