@@ -2,38 +2,36 @@
 // funcion calculo Total entradas by Alejandro Boffa 10/2022 Codo a Codo
 
 function resumen() {
-  var precio = 200,
-    nombre,
-    apellido,
-    correo,
-    cantEntradas,
-    total,
-    categoria;
+  const precio = 200;
+  let descuento = 0;
+  let total = 0;
 
 // recupero contenido del HTML por Id, para poder validar y seguir
-  cantEntradas = document.getElementById('inputCantidad').value;
-  categoria = document.getElementById('inputCategoria').value;
-  nombre = document.getElementById('inputNombre').value;
-  apellido = document.getElementById('inputApellido').value;
-  correo = document.getElementById('inputCorreo').value;
-
+  const cantEntradas = document.getElementById('inputCantidad').value;
+  const categoria = document.getElementById('inputCategoria').value;
+  const nombre = document.getElementById('inputNombre').value;
+  const apellido = document.getElementById('inputApellido').value;
+  const correo = document.getElementById('inputCorreo').value;
 
 // valido que existan nombre, apellido y email
   if (nombre !== "" && apellido !== "" && correo !=="") { 
-    // calculo total segun categoria
+    // calculo descuento segun categoria
     if (categoria == 'Estudiante') {
-      total = (precio - precio * 0.80) * cantEntradas;
+      descuento = precio * 0.80;
     } else if (categoria == 'Trainee') {
-      total = (precio - precio * 0.50) * cantEntradas;
+      descuento = precio * 0.50;
     } else if (categoria == 'Junior') {
-      total = (precio - precio * 0.15) * cantEntradas;
-    } else if (categoria == 'General') {
-      total = precio * cantEntradas;
+      descuento = precio * 0.15;
     }
+    // calculo total gral
+    total = (precio - descuento) * cantEntradas;
+
+    // ahora reemplazo valor "Total" en pagina web dinamicamente sin recargarla
     document.getElementById('importeTotal').innerHTML =
     'Total a Pagar: $' + total;
 
   } else {
+    // aparece Alerta si no ingreso nombre, apellido y email
     window.alert('Por Favor, ingrese el nombre, apellido y e-mail correctos');
   }
   
