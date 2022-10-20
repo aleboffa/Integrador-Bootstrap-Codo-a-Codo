@@ -27,8 +27,7 @@ function resumen() {
     total = (precio - descuento) * cantEntradas;
 
     // ahora reemplazo valor "Total" en pagina web dinamicamente sin recargarla
-    document.getElementById('importeTotal').innerHTML =
-    'Total a Pagar: $' + total;
+    document.getElementById('importeTotal').innerHTML = 'Total a Pagar: $' + total;
 
   } else {
     // aparece Alerta si no ingreso nombre, apellido y email
